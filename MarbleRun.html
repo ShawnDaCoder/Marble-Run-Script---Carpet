@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Distance Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background: #f4f4f4;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Ramp Distance Calculator</h2>
+
+    <label>Enter height h (cm):</label>
+    <input type="number" id="heightInput" step="0.01">
+
+    <button onclick="calculateDistance()">Calculate d</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function calculateDistance() {
+    let h = parseFloat(document.getElementById("heightInput").value);
+
+    // Refined cubic formula
+    let d =
+        0.11374 * Math.pow(h, 3)
+        - 2.56490 * Math.pow(h, 2)
+        + 30.16095 * h
+        - 55.18;
+
+    document.getElementById("result").innerHTML =
+        "Estimated distance d = " + d.toFixed(2);
+}
+</script>
+
+</body>
+</html> 
