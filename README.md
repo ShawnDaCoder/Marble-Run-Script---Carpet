@@ -1,3 +1,3 @@
 # Marble-Run-Script---Carpet
 
-Download this the html file as an html file and run in a browser.
+Download the html file as an html file and run in a browser.
